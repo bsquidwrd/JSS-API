@@ -70,7 +70,6 @@ for row in reader:
         deviceURL = '%s/serialnumber/%s' % (apiEndpoint, import_values['serial_number'])
         # This is where the request is sent to update the asset tag of the device
         request = requests.put(deviceURL, data=xmlData, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
-        #request = requests.get(deviceURL, auth=(jssAPIUsername, jssAPIPassword), verify=False)
 
         if request.status_code == 201:
             successMsg = 'Updated device %s with asset tag %s' % (import_values['serial_number'], import_values['asset_tag'])
