@@ -53,6 +53,9 @@ else:
 
 error_reached = False
 
+jssAPIURL = jssURL + "JSSResource/"
+apiEndpoint = jssAPIURL + "mobiledevices"
+
 requestHeaders = {
     'Content-Type': 'application/xml',
     'Accept': 'application/xml',
@@ -63,8 +66,6 @@ try:
 except Exception as e:
     print(e)
     sys.exit(0)
-
-apiEndpoint = jssURL + "JSSResource/mobiledevices"
 
 # Simply loop through all the records in the CSV, minus the header
 # since the reader sees the first line as the reference point
