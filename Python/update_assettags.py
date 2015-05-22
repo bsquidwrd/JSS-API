@@ -9,8 +9,7 @@ verifySSL = False
 # I have my own JSS Module for easy code publishing
 try:
     from jssmodule import credentials as jssCred
-    jssCred.isLoaded()
-    credentials_loaded = True
+    credentials_loaded = jssCred.isLoaded()
 except:
     credentials_loaded = False
 
