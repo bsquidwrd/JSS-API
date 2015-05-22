@@ -1,3 +1,23 @@
+##
+# This is used to update device records with an asset tag based off of a CSV file
+#
+# You can either run this by typing the following:
+#       python update_assettags.py ~/Desktop/assets.csv
+#
+# The assets.csv file must have two headers. serial_number and asset_tag
+#
+# If you have any issues, please submit an issue on this GitHub Repo and
+# I can try to help you at the next chance I get.
+#
+# Set the URL, Username and Password where stated below.
+# They currently have placeholders in there, just replace them with your information
+#
+# For this script, the user you enter must have the following permissions:
+#   - Mobile Devices
+#       - Read
+#       - Write
+##
+
 import requests, csv, sys
 
 # Location of the file that contains serial_number and asset_tag columns
