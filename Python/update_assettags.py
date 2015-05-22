@@ -1,9 +1,3 @@
-##
-# This script was created by Brandon Usher on 2015/05/18
-# This script may be distributed any way seen fit, so long as it remains free
-# If you paid money for this script, immediately ask for a refund
-##
-
 import requests, csv, sys
 
 # Location of the file that contains serial_number and asset_tag columns
