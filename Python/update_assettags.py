@@ -36,7 +36,7 @@ jssAPIPassword = 'password'
 
 # I have my own JSS Module for easy code publishing
 try:
-    from jssmodule import credentials as jssCred
+    from vcpmodule import credentials as jssCred
     credentials_loaded = jssCred.isLoaded()
     creds = jssCred.getJSS()
     jssURL = creds.url

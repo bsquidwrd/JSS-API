@@ -18,7 +18,7 @@ jssAPIPassword = 'password'
 
 # I have my own JSS Module for easy code publishing
 try:
-    from jssmodule import credentials as jssCred
+    from vcpmodule import credentials as jssCred
     credentials_loaded = jssCred.isLoaded()
     creds = jssCred.getJSS()
     jssURL = creds.url
@@ -47,6 +47,7 @@ except Exception as e:
     sys.exit(0)
 
 # Go through and set device information
+
 
 if error_reached:
     print('Error importing devices')
