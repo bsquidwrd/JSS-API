@@ -5,7 +5,7 @@
 #       python clear_user_and_location.py ~/Desktop/users.csv
 #
 # The file does not need to be on your Desktop or called users.csv
-# The users.csv file must have one header:
+# The users.csv file must have these headers:
 #       username, full_name, email, phone_number, position
 #
 # If you have any issues, please submit an issue on this GitHub Repo and
