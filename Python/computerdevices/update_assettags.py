@@ -15,7 +15,7 @@
 # They currently have placeholders in there, just replace them with your information
 #
 # For this script, the user you enter must have the following permissions:
-#   - Mobile Devices
+#   - Computers
 #       - Read
 #       - Write
 ##
