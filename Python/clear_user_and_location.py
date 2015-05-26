@@ -92,7 +92,7 @@ for row in reader:
                 <room />
             </location>
         </mobile_device>
-        """ % (import_values['serial_number'])
+        """
         deviceURL = '%s/serialnumber/%s' % (apiEndpoint, import_values['serial_number'])
         # This is where the request is sent
         request = requests.put(deviceURL, data=xmlData, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
