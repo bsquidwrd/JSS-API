@@ -38,14 +38,12 @@ jssAPIPassword = 'password'
 try:
     from jssmodule import credentials as jssCred
     credentials_loaded = jssCred.isLoaded()
-except:
-    credentials_loaded = False
-
-if credentials_loaded:
     creds = jssCred.getJSS()
     jssURL = creds.url
     jssAPIUsername = creds.username
     jssAPIPassword = creds.password
+except:
+    credentials_loaded = False
 
 ##                              ##
 # DO NOT CHANGE ANY OF THE BELOW #

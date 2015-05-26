@@ -10,24 +10,22 @@ importFile = sys.argv[1]
 verifySSL = False
 
 # Set JSS Variables here
+# JSS URL must end with / like so:
+# https://jss.example.com:8443/
+jssURL = 'https://jss.example.com:8443/'
+jssAPIUsername = 'username'
+jssAPIPassword = 'password'
+
 # I have my own JSS Module for easy code publishing
 try:
     from jssmodule import credentials as jssCred
     credentials_loaded = jssCred.isLoaded()
-except:
-    credentials_loaded = False
-
-if credentials_loaded:
     creds = jssCred.getJSS()
     jssURL = creds.url
     jssAPIUsername = creds.username
     jssAPIPassword = creds.password
-else:
-    # JSS URL must end with / like so:
-    # https://jss.example.com:8443/
-    jssURL = 'https://jss.example.com:8443/'
-    jssAPIUsername = 'username'
-    jssAPIPassword = 'password'
+except:
+    credentials_loaded = False
 
 ##                              ##
 # DO NOT CHANGE ANY OF THE BELOW #
