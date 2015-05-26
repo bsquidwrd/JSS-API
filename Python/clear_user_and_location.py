@@ -22,9 +22,9 @@
 
 import requests, csv, sys
 
-# Location of the file that contains serial_number and asset_tag columns
+# Location of the import file
 importFile = sys.argv[1]
-# Set this to False if you have any errors
+# Set this to False if you run into any errors
 verifySSL = False
 
 # Set JSS Variables here
@@ -94,7 +94,7 @@ for row in reader:
         </mobile_device>
         """ % (import_values['serial_number'])
         deviceURL = '%s/serialnumber/%s' % (apiEndpoint, import_values['serial_number'])
-        # This is where the request is sent to update the asset tag of the device
+        # This is where the request is sent
         request = requests.put(deviceURL, data=xmlData, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
 
         if request.status_code == 201:
