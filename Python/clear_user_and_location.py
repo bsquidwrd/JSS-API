@@ -52,7 +52,7 @@ except:
 error_reached = False
 
 jssAPIURL = jssURL + "JSSResource/"
-apiEndpoint = jssAPIURL + "mobiledevices/serialnumber/"
+apiEndpoint = jssAPIURL + "mobiledevices"
 
 requestHeaders = {
     'Content-Type': 'application/xml',
