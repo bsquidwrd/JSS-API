@@ -2,7 +2,7 @@
 # This is used to clear the User and Location information
 #
 # You can run this by typing the following:
-#       python clear_user_and_location.py ~/Desktop/users.csv
+#       python create_users.py ~/Desktop/users.csv
 #
 # The file does not need to be on your Desktop or called users.csv
 # The users.csv file must have these headers:

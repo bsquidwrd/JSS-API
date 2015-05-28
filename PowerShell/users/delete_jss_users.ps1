@@ -1,6 +1,26 @@
+##
+# This is used to clear the User and Location information
+#
+# You can run this by typing the following:
+#       .\delete_jss_users.ps1 -file .\users.csv
+#
+# The file does not need to be on your Desktop or called users.csv
+# The users.csv file must have these headers:
+#       username
+#
+# If you have any issues, please submit an issue on this GitHub Repo and
+# I can try to help you at the next chance I get.
+#
+# Set the URL, Username and Password where stated below.
+# They currently have placeholders in there, just replace them with your information
+#
+# For this script, the user you enter must have the following permissions:
+#   - Users
+#       - Delete
+##
+
 param (
-    [string]$file = $(throw "-file is required."),
-    [string]$output
+    [string]$file = $(throw "-file is required.")
 )
 
 $disableSSL = $true
@@ -46,7 +66,7 @@ $userAgent = "Powershell Script for JAMF JSS API/Created By Brandon Usher"
 if($credsLoaded) {
     $baseurl = $jssURL + "/users"
 } else {
-    $baseurl = $jssURL + "JSSResource/users"
+    $baseurl = $jssURL + "/JSSResource/users"
 }
 
 $users = Import-Csv $file
