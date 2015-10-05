@@ -75,7 +75,7 @@ for row in reader:
             import_values[col] = str(value)
 
         # Now once all the columns are imported into import_values we can use the API
-        # to update the device records
+        # to create the user records
 
         # Data to be sent to server
         xmlData = """<?xml version='1.0' encoding='utf-8'?>
