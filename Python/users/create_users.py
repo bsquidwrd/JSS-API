@@ -1,5 +1,5 @@
 ##
-# This is used to clear the User and Location information
+# This is used to create Users in the JSS
 #
 # You can run this by typing the following:
 #       python create_users.py ~/Desktop/users.csv
