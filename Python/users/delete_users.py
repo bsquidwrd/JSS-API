@@ -80,9 +80,8 @@ for row in reader:
         # This is where the request is sent
         userURL = "%s/name/%s" % (apiEndpoint, import_values['username'])
         request = requests.delete(userURL, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
-        if request.status_code == 201:
-            successMsg = 'Deleted user %s' % (import_values['username'])
-            print(successMsg)
+        if request.status_code == requests.codes.ok:
+            print('Deleted user %s' % (import_values['username']))
         elif request.status_code == 404:
             raise Exception(
                 'Could not delete user %s' %(import_values['username'])
