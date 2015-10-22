@@ -25,6 +25,9 @@ import requests, sys, json
 # Set this to False if you have any errors
 verifySSL = False
 
+# Set this so it only goes through one device for testing
+debug = True
+
 # Set JSS Variables here
 # JSS URL must end with / like so:
 # https://jss.example.com:8443/
@@ -92,6 +95,9 @@ for device in mobile_devices:
     except Exception as e:
         error_reached = True
         print(e)
+
+    if debug:
+        sys.exit(0)
 
 if error_reached:
     print('Error renaming devices')
