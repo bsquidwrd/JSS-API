@@ -26,7 +26,7 @@ import requests, sys, json
 verifySSL = False
 
 # Set this so it only goes through one device for testing
-debug = True
+debug = False
 
 # Set JSS Variables here
 # JSS URL must end with / like so:
