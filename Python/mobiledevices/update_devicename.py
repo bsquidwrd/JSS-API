@@ -23,6 +23,7 @@ verifySSL = False
 
 # Set this so it only goes through one device for testing
 debug = True
+debug_username = 'brandonusher'
 
 # Set JSS Variables here
 # JSS URL must end with / like so:
@@ -67,14 +68,11 @@ for device in mobile_devices:
     try:
         # Get the device ID then assemble the url to fetch the rest of the device record
         device_id = device['id']
-        deviceEndpoint = '%s/mobiledevices/id/%s' % (jssAPIURL, device_id)
-        tmp_device = requests.get(deviceEndpoint, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
-
-        # Load the device information as JSON for easy parsing
-        mobile_device = json.loads(tmp_device.text)['mobile_device']
+        if debug is True and device['username'].lower() != debug_username.lower():
+            continue
 
         # Device name is the same as the username field. Get it, assemble the push URL then push it
-        device_name = mobile_device['location']['username']
+        device_name = device['username']
         deviceNameURL = '%s/mobiledevicecommands/command/DeviceName/%s/id/%s' % (jssAPIURL, device_name, device_id)
         # This is where the request is sent to update the name of the device
         request = requests.post(deviceNameURL, headers=requestHeaders, verify=verifySSL, auth=(jssAPIUsername, jssAPIPassword))
@@ -90,9 +88,6 @@ for device in mobile_devices:
     except Exception as e:
         error_reached = True
         print(e)
-
-    if debug:
-        sys.exit(0)
 
 if error_reached:
     print('Error renaming devices')
